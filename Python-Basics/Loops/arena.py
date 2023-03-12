@@ -112,7 +112,7 @@ player["weapon"] = player["class"].get("starter_weapon")
 player["armor"] = player["class"].get("starter_armor")
 player["skills"] = [player["class"].get("starter_skill")]
 
-print(f'\n Ah, A knight! {player["class"].get("desc")} You will do well as a {player["class"].get("name")}!')
+print(f'\n{player["class"].get("desc")} You will do well as a {player["class"].get("name")}!')
 print("\nEntering the arena...")
 
 print(f'\nWelcome, {player["class"].get("name")}!\n')
@@ -137,8 +137,9 @@ while is_fighting:
             attack_damage = random.randint(1, enemy["skill"].get("attk") + enemy["skill"].get("mag_attk"))
             player["class"]["hp"] -= attack_damage
             print(f"The {enemy['name']} did {attack_damage} damage!")
-            if player["class"].get("hp") <= 0:
-                player["is_alive"] = False
+        if player["class"].get("hp") <= 0:
+            player["is_alive"] = False
+            
     else:
         print(f"{enemy['name']} attacks the player with {enemy['skill'].get('name')}!")
         attack_damage = random.randint(1, enemy["skill"].get("attk") + enemy["skill"].get("mag_attk"))
@@ -151,6 +152,8 @@ while is_fighting:
             attack_damage = random.randint(1, player["skills"][0].get("attk") + player["skills"][0].get("mag_attk"))
             enemy["hp"] -= attack_damage
             print(f"You did {attack_damage} damage!")
+        if enemy["hp"] <= 0:
+            enemy["is_alive"] = False
     
     if not player["is_alive"]:
         print("\nYou have died!")
