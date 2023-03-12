@@ -1,11 +1,9 @@
 def highest_even(li):
     even_list = []
-
     for item in li:
         is_even = item % 2 == 0
         if is_even:
             even_list.append(item)
-
     return max(even_list)
 
 
