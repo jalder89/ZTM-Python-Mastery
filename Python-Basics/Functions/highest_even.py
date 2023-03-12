@@ -8,3 +8,4 @@ def highest_even(li):
 
 
 print(highest_even([10, 7, 4, 6, 10, 11, 3, 12, 2, 8]))
+print('Hello'[0])
