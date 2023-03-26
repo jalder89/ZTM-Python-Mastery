@@ -1,0 +1,1 @@
+Mode w creates a new file if one doesn't exist!
